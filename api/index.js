@@ -40,9 +40,7 @@ app.use('/user', userRoutes);
 app.use('/post', postRoutes);
 
 // Mongoose connection
-mongoose.connect(process.env.DB, {
-  directConnection: true,
-}).then(() => console.log("Database connected"))
+mongoose.connect(process.env.DB).then(() => console.log("Database connected"))
   .catch(e => {
     console.error("Database connection error:", e);
     process.exit(1); // Exit the application on database connection error
