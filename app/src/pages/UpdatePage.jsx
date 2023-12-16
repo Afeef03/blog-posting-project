@@ -49,7 +49,7 @@ const UpdatePage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:4000/post/getsinglepost/${id}`);
+                const res = await axios.get(`https://myblogs-api.vercel.app/post/getsinglepost/${id}`);
                 setPost(res.data);
                 setTitle(res.data.title);
                 setSummary(res.data.summary);
@@ -88,7 +88,7 @@ const UpdatePage = () => {
         try {
             // Your post creation logic goes here
             setLoader(true)
-            const res = await axios.put(`http://localhost:4000/post/updatepost/${id}`, data, { withCredentials: true })
+            const res = await axios.put(`https://myblogs-api.vercel.app/post/updatepost/${id}`, data, { withCredentials: true })
             console.log('About to show toast message'); // Log a message
             notify()
             
