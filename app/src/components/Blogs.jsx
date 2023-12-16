@@ -28,7 +28,7 @@ const Blogs = () => {
             try {
                 setLoader(true);
                 // Fetch posts from the server with pagination parameters
-                const res = await axios.get('http://localhost:4000/post/getallpost', {
+                const res = await axios.get('https://myblogs-api.vercel.app/post/getallpost', {
                     params: {
                         page,
                         pageSize: 5,
@@ -108,7 +108,7 @@ const Blogs = () => {
                         title={item.title}
                         summary={item.summary}
                         content={item.content}
-                        image={`http://localhost:4000/uploads/${item.picturePath.replace(
+                        image={`https://myblogs-api.vercel.app/uploads/${item.picturePath.replace(
                             /\\/g,
                             '/'
                         )}`}
