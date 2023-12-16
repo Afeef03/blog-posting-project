@@ -32,7 +32,7 @@ const SinglePost = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:4000/post/getsinglepost/${id}`)
+                const res = await axios.get(`https://myblogs-api.vercel.app/post/getsinglepost/${id}`)
                 setPost(res.data)
                 // console.log(format(new window.Date(post.createdAt), 'yyyy-LL-dd'))
                 console.log(res.data)
@@ -57,7 +57,7 @@ const SinglePost = () => {
                 return;
             }
 
-            const res = await axios.delete(`http://localhost:4000/post/deletepost/${id}`, { withCredentials: true }).then(() => {
+            const res = await axios.delete(`https://myblogs-api.vercel.app/post/deletepost/${id}`, { withCredentials: true }).then(() => {
                 alert('Deleted post')
                 navigateTo('/');
 
@@ -133,7 +133,7 @@ const SinglePost = () => {
                         title={post.title}
                         summary={post.summary}
                         content={post.content}
-                        image={`http://localhost:4000/uploads/${post.picturePath}`}
+                        image={`https://myblogs-api.vercel.app/uploads/${post.picturePath}`}
                         time={formatDate(post.createdAt)}
                         deletePost={deletePostWithConfirmation}
                         user={user}
