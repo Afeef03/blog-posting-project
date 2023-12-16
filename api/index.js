@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'PRODUCTION') {
 }
 
 // CORS middleware configuration
-app.use(cors({ credentials: true, origin: 'https://myblogs.vercel.app' }));
+app.use(cors({ credentials: true, origin: '' }));
 
 
 // Serve static files from the 'uploads' directory
