@@ -28,7 +28,7 @@ const Login = () => {
   const login = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/user/login', {
+      const res = await axios.post('https://myblogs-api.vercel.app/user/login', {
         email,
         password
       }, {
