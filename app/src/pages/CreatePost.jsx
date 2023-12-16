@@ -67,7 +67,7 @@ const CreatePost = () => {
 
     try {
       setLoader(true);
-      const res = await axios.post("http://localhost:4000/post/createpost", data, { withCredentials: true }).then(() => {
+      const res = await axios.post("https://myblogs-api.vercel.app/post/createpost", data, { withCredentials: true }).then(() => {
         toast.success("Post created successfully", {
           theme: 'dark',
         });

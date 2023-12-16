@@ -33,7 +33,7 @@ const Register = () => {
       setLoader(true);
 
       // Perform registration
-      const response = await axios.post('http://localhost:4000/user/register', data, { withCredentials: true });
+      const response = await axios.post('https://myblogs-api.vercel.app/user/register', data, { withCredentials: true });
 
       // Check if the response contains the user data and _id
     if (response.data && response.data._id) {

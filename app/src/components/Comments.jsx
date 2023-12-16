@@ -23,7 +23,7 @@ const Comments = () => {
     const fetchComments = async () => {
         try {
             // Send a PUT request to add a comment to the post
-            await axios.put(`http://localhost:4000/post/addcomment/${id}`, { text }, { headers: { 'Content-Type': 'application/json' } });
+            await axios.put(`https://myblogs-api.vercel.app/post/addcomment/${id}`, { text }, { headers: { 'Content-Type': 'application/json' } });
             // After adding the comment, clear the input and refetch the comments to get the updated list
             setText('');
             fetchData();
@@ -38,7 +38,7 @@ const Comments = () => {
     const fetchData = async () => {
         try {
             // Send a GET request to retrieve comments for the current post
-            const res = await axios.get(`http://localhost:4000/post/getsinglepost/${id}`);
+            const res = await axios.get(`https://myblogs-api.vercel.app/post/getsinglepost/${id}`);
             // Update the comments state with the received data
             setComments(res.data.comments);
         } catch (error) {

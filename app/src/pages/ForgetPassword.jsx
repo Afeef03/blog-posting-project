@@ -21,7 +21,7 @@ const ForgetPassword = () => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/user/singleuser/${userId}`);
+      const res = await axios.get(`https://myblogs-api.vercel.app/user/singleuser/${userId}`);
       setInfo(res.data);
       if (!Cookie.get('token')) {
         setAuth(true);
@@ -38,7 +38,7 @@ const ForgetPassword = () => {
   const sendOtp = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:4000/user/sendotp/${userId}`);
+      const res = await axios.get(`https://myblogs-api.vercel.app/user/sendotp/${userId}`);
       setLoading(false);
       console.log(res.data);
       toast.success(`OTP sent to email: ${info.email}`);
@@ -52,7 +52,7 @@ const ForgetPassword = () => {
   const verifyOtp = async () => {
     try {
       setLoading(true);
-      const res = await axios.post(`http://localhost:4000/user/verifyotp/${userId}`, { otp });
+      const res = await axios.post(`https://myblogs-api.vercel.app/user/verifyotp/${userId}`, { otp });
       setLoading(false);
       console.log(res)
       toast.success('OTP verified successfully. You can now reset your password.');
