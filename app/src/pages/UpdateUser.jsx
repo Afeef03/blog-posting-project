@@ -65,7 +65,7 @@ const UpdateUser = () => {
         try {
             // Your post creation logic goes here
             setLoader(true)
-            const res = await axios.put(`http://localhost:4000/user/updateuser/${id}`, data, { withCredentials: true }).then(() => {
+            const res = await axios.put(`https://myblogs-api.vercel.app/user/updateuser/${id}`, data, { withCredentials: true }).then(() => {
                 notify()
             }).catch((error) => {
                 toast.error(error.response.data.message, {
