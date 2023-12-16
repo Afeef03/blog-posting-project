@@ -19,7 +19,7 @@ const ProfilePage = () => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const res = await axios.get(`http://localhost:4000/user/singleuser/${userId}`);
+                const res = await axios.get(`https://myblogs-api.vercel.app/user/singleuser/${userId}`);
                 setinfo(res.data);
                 setIsAuth(!Cookie.get('token'));
             } catch (error) {
