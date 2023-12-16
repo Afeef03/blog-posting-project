@@ -20,7 +20,7 @@ const ResetPassword = () => {
     const updatePassword = async () => {
         try {
             setLoading(true);
-            const response = await axios.post(`http://localhost:4000/user/verifypassword/${userId}`, { newPassword });
+            const response = await axios.post(`https://myblogs-api.vercel.app/user/verifypassword/${userId}`, { newPassword });
             setLoading(false);
             toast.success("password updated successfully");
             setNewPassword('')
